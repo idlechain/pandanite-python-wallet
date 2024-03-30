@@ -14,8 +14,6 @@ def wallet_address_from_public_key(public_key):
         hash4 = hashlib.sha256(hash3).digest()
         checksum = hash4[:4]
         address = b'' + hash2[:20] + checksum
-        print(checksum)
-        print(address)
         return '00' + hexlify(address).decode('utf-8').upper()
     except Exception as e:
         return False
